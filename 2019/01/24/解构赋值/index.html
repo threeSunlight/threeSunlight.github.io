@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        解构赋值 - threeSunlight
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 清心笑对百杰,寡欲乐享人生 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>一个奔跑的太阳</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 清心笑对百杰,寡欲乐享人生 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        解构赋值
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-01-24 17:29:48</span></span>
+        
+        
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <p>#变量的解构赋值</p>
+<p>##目录<br>1.数组的解构赋值<br>2.对象的解构赋值<br>3.字符串的解构赋值<br>4.数值和布尔值的解构赋值<br>5.函数参数的解构赋值<br>6.圆括号问题<br>7.用途</p>
+<p>###数组的解构赋值</p>
+<ol>
+<li><p>定义<br>&emsp; &emsp;Es6中允许按照一定模式,兄数组和对象中提取值，对变量进行赋值,这种称为解构</p>
+ <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">let [a,b,c] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let [foo, [</span><br><span class="line">    [bar], roo</span><br><span class="line">], baz] = [<span class="number">1</span>, [</span><br><span class="line">    [<span class="number">2</span>], <span class="number">3</span></span><br><span class="line">], <span class="number">9</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子2</span></span><br><span class="line">let [, , thrid] = ['foo', 'zaa', 'baz']</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子3</span></span><br><span class="line">let [x, , y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子4</span></span><br><span class="line">let [head, ...tail] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//例子5</span></span><br><span class="line">let [...taile] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不完全解构但可以成功</p>
+ <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let [a,b] = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">let [a,[b,c],d] = [<span class="number">1</span>,[<span class="number">2</span>,<span class="number">3</span>],<span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>###注意地方  (不完全解构但失败)<br>&emsp; &emsp; 解构要求是左右两边的数据类型都一样,如果有一方不一样则不会成功<br>    <figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let <span class="string">[bar,foo]</span> = <span class="string">[1]</span></span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li><p>set方法使用数组的解构赋值</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [u, i, o] = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Generator函数使用解构赋值</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子8  不懂的地方</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fibs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> b = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">yield</span> a; <span class="comment">//0 1 1 2 3 5 </span></span><br><span class="line">        [a, b] = [b, a + b]; <span class="comment">// </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [first, second, third, fourth, fifth, sixth] = fibs();</span><br><span class="line">sexth <span class="comment">//5</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解构赋值中的默认值的处理<br>1.在es6中使用校验是 ‘===’ 严格相等,即严格等于undefined才能调用默认值的调用</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [foow = <span class="literal">true</span>] = []</span><br><span class="line">foow<span class="comment">//true</span></span><br><span class="line"><span class="keyword">let</span> [a, s = <span class="string">'b'</span>] = [<span class="string">'a'</span>]</span><br><span class="line">a <span class="comment">//a</span></span><br><span class="line">s<span class="comment">//b</span></span><br><span class="line"><span class="keyword">let</span> [f, t = <span class="string">'b'</span>] = [<span class="string">'e'</span>, <span class="literal">undefined</span>]</span><br><span class="line">f<span class="comment">//e</span></span><br><span class="line">t<span class="comment">//b</span></span><br></pre></td></tr></table></figure>
+<p> ####注意的地方</p>
+<ol>
+<li><p>如果默认值是一个表达式,那么这个表达式是惰性求值,即只有在用到的时候,才会求值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//例子10  没调用函数</span></span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">fddd</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">         <span class="built_in">console</span>.log(<span class="string">'aaaa'</span>);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">let</span> [xrrr = fddd()] = [<span class="literal">null</span>]</span><br><span class="line"></span><br><span class="line"> <span class="comment">//例子11  调用函数</span></span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">fddd</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">         <span class="built_in">console</span>.log(<span class="string">'aaaa'</span>);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">let</span> [xrrr = fddd()] = [<span class="literal">undefined</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li>默认值可以引用解构赋值的其他变量,但该变量必须已经声明.必须是已经定义过的<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let [x=<span class="number">1</span>,y=<span class="number">1</span>] = []</span><br><span class="line">let [x=<span class="number">1</span>,y=x] = [<span class="number">2</span>]   x=<span class="number">2</span>,y=<span class="number">2</span></span><br><span class="line">let [x=y,y=<span class="number">1</span>] = []   <span class="comment">//报错,没有提前定义</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<p>###对象的解构赋值</p>
+<ol>
+<li>定义<br>&emsp;&emsp;同样解构赋值也能为对象来进行服务。<br>&emsp;&emsp;对象的解构与数组有一个重要的不同,数组的元素是按次序排列的,变量的取值由它的位置决定;必须变量与属性名相同来进行获取</li>
+<li><p>不同的写法<br>&emsp;2.1 定义写法</p>
+ <figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子1</span></span><br><span class="line"><span class="keyword">let</span> &#123;foo,boo&#125; = &#123;<span class="string">'foo'</span>:<span class="string">'aaa'</span>,<span class="string">'boo'</span>:<span class="string">'222'</span>&#125;</span><br><span class="line">    <span class="comment">//foo  aaa</span></span><br><span class="line">    <span class="comment">//boo  222</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//例子2</span></span><br><span class="line"><span class="keyword">let</span> &#123;fooa,bara&#125; = &#123;<span class="string">'bara'</span>:<span class="string">'aaa'</span>,<span class="string">'fooa'</span>:<span class="string">'bbb'</span>&#125;</span><br><span class="line"><span class="comment">//fooa aaa</span></span><br><span class="line"><span class="comment">//bara bbb</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//例子3</span></span><br><span class="line"><span class="keyword">let</span> &#123;fooe,bare,baza&#125; = &#123;<span class="string">'baex'</span>:<span class="number">1</span>,<span class="string">'fooe'</span>:<span class="number">2</span>,<span class="string">'bare'</span>:<span class="number">3</span>&#125;</span><br><span class="line">    <span class="comment">//console.log(fooe,bare,baza);</span></span><br><span class="line">    <span class="comment">//2 3 undefined</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//例子4</span></span><br><span class="line">    <span class="keyword">let</span> obj = &#123;<span class="string">'first'</span>:<span class="string">'hellow'</span>,<span class="string">'second'</span>:<span class="string">'world'</span>&#125;</span><br><span class="line">    <span class="keyword">let</span> &#123;first,second&#125; = obj</span><br><span class="line">    <span class="comment">//first hellow</span></span><br><span class="line">    <span class="comment">//second world</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//例子5 (这种写法是一种变相的赋值)</span></span><br><span class="line">        <span class="keyword">let</span> &#123;frr:baree&#125; = &#123;frr:<span class="number">222</span>,bre:<span class="string">'fff'</span>&#125;</span><br><span class="line">        <span class="comment">//console.log(baree);</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果变量提前声明,那么一定要用（）来进行包起来,因为解析器解析的时候会字段加上()</p>
+ <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foo;</span><br><span class="line">(&#123;foo&#125; = &#123;foo:<span class="number">1</span>&#125;)</span><br><span class="line"><span class="keyword">let</span> baredt;</span><br><span class="line">(&#123;baredt&#125; - &#123;baredt:<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>因为数组是特殊的对象,所以可以和数组进行解构赋值</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </span><br><span class="line"><span class="keyword">let</span> &#123;<span class="number">0</span> : firstee, [arr.length - <span class="number">1</span>] : lastee&#125; = arr;</span><br><span class="line"><span class="built_in">console</span>.log(firstee,lastee,arr.length<span class="number">-1</span>); <span class="comment">//  1,2,3</span></span><br><span class="line"><span class="keyword">let</span> &#123;<span class="string">'0'</span>:fffd,<span class="string">'1'</span>:fff,<span class="string">'2'</span>:ffff&#125; = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]  <span class="comment">//1,2,3</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

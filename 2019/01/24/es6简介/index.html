@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        es6简介 - threeSunlight
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 清心笑对百杰,寡欲乐享人生 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>一个奔跑的太阳</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#转码器"><span class="toc-text">转码器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#babel转码器"><span class="toc-text">babel转码器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Traceur转码器"><span class="toc-text">Traceur转码器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量改变"><span class="toc-text">变量改变</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6变量声明的六种方法"><span class="toc-text">ES6变量声明的六种方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#顶层对象的属性"><span class="toc-text">顶层对象的属性</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 清心笑对百杰,寡欲乐享人生 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        es6简介
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-01-24 17:29:31</span></span>
+        
+        
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h2 id="转码器"><a href="#转码器" class="headerlink" title="转码器"></a>转码器</h2><h3 id="babel转码器"><a href="#babel转码器" class="headerlink" title="babel转码器"></a>babel转码器</h3><ol>
+<li>简介<br>&emsp;&emsp;Babel是一个广泛使用d额ES6转码器,可以将ES6代码转化为ES5,从而让现在的环境可以支持</li>
+<li>配置文件为.babelrc<br>&emsp;&emsp;放置在项目的根目录下面,使用的第一步就是要去配置这个文件<br>&emsp;&emsp;配置格式如下<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;  <span class="attr">"presets"</span>: [],</span><br><span class="line"><span class="attr">"plugins"</span>: [] &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>presets字段设定转码规则，官方提供以下的规则集，你可以根据需要安装。<br>      <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#最新转码规则 </span></span><br><span class="line">$ npm <span class="keyword">install </span>--save-dev <span class="keyword">babel-preset-latest</span></span><br><span class="line"><span class="keyword"># </span>react 转码规则 </span><br><span class="line">$ npm <span class="keyword">install </span>--save-dev <span class="keyword">babel-preset-react</span></span><br><span class="line"><span class="keyword"># </span>不同阶段语法提案的转码规则（共有<span class="number">4</span>个阶段），选装一个 </span><br><span class="line">$ npm <span class="keyword">install </span>--save-dev <span class="keyword">babel-preset-stage-0 </span>$ npm <span class="keyword">install </span>--save-dev <span class="keyword">babel-preset-stage-1 </span>$ npm <span class="keyword">install </span>--save-dev <span class="keyword">babel-preset-stage-2 </span>$ npm <span class="keyword">install </span>--save-dev <span class="keyword">babel-preset-stage-3</span></span><br><span class="line"><span class="keyword">然后，将这些规则加入.babelrc。</span></span><br><span class="line"><span class="keyword">&#123; </span>   <span class="string">"presets"</span>:</span><br><span class="line"> [      <span class="string">"latest"</span>,      <span class="string">"react"</span>,      <span class="string">"stage-2"</span>    ],    </span><br><span class="line"> <span class="string">"plugins"</span>: []  </span><br><span class="line"> &#125;</span><br><span class="line">注意，以下所有 <span class="keyword">Babe </span>l工具和模块的使用，都必须先写好.<span class="keyword">babelrc。</span></span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li><p>命令行转码 (babel-cli)</p>
+<pre><code><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> install --<span class="built_in">global</span> babel-cli</span><br></pre></td></tr></table></figure>
+</code></pre><p> 3.1 用法</p>
+<pre><code><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 转码结果输出到标准输出 </span></span><br><span class="line">$ babel example.js</span><br><span class="line"><span class="comment"># 转码结果写入一个文件 # --out-file 或 -o 参数指定输出文件 </span></span><br><span class="line">$ babel example.js --<span class="keyword">out</span>-file compiled.js </span><br><span class="line"><span class="comment"># 或者 </span></span><br><span class="line">$ babel example.js -o compiled.js</span><br><span class="line"><span class="comment"># 整个目录转码 # --out-dir 或 -d 参数指定输出目录 </span></span><br><span class="line">$ babel src --<span class="keyword">out</span>-dir <span class="class"><span class="keyword">lib</span> </span></span><br><span class="line"><span class="comment"># 或者 </span></span><br><span class="line">$ babel src -d <span class="class"><span class="keyword">lib</span></span></span><br><span class="line"><span class="comment"># -s 参数生成source map文件 </span></span><br><span class="line">$ babel src -d <span class="class"><span class="keyword">lib</span> -<span class="title">s</span></span></span><br></pre></td></tr></table></figure>
+</code></pre><p>3.2 babel-node<br>   babel-node 命令可以直接运行es6脚本.将上面的代码放入脚本文件es6.js,然后直接运行</p>
+<pre><code><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ babel-<span class="keyword">node</span> <span class="title">es6</span>.js</span><br></pre></td></tr></table></figure>
+</code></pre></li>
+</ol>
+<h3 id="Traceur转码器"><a href="#Traceur转码器" class="headerlink" title="Traceur转码器"></a>Traceur转码器</h3><ol>
+<li>使用方法<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://google.github.io/traceur-compiler/bin/traceur.js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://google.github.io/traceur-compiler/bin/BrowserSystem.js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://google.github.io/traceur-compiler/src/bootstrap.js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span><span class="javascript"><span class="keyword">import</span> <span class="string">'./Greeter.js'</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li>命令行转码<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g traceu</span><br><span class="line">$ traceur &lt;文件夹名字&gt; Calc <span class="function"><span class="keyword">constructor</span> </span></span><br><span class="line"><span class="function">$ $ <span class="title">traceur</span> --<span class="title">script</span> &lt;文件夹名字&gt; --<span class="title">out</span> &lt;文件夹名字&gt; --<span class="title">experimental</span></span></span><br><span class="line"><span class="function">#--<span class="title">script</span>选项表示指定输入文件,--<span class="title">out</span>表示指定输出文件</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="变量改变"><a href="#变量改变" class="headerlink" title="变量改变"></a>变量改变</h3><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="keyword">let</span>  &#123;&#123;&#123;&#123;&#125;&#125;&#125;&#125;</span><br><span class="line">变量声明,和<span class="keyword">var</span>一样,但是有作用域的限制,只有在规定的代码块内才有用,不存在变量提升,不允许在函数变量内重复声明 </span><br><span class="line"><span class="number">2.</span> <span class="keyword">const</span> </span><br><span class="line">常量声明,不能进行重复声明</span><br><span class="line"><span class="number">3.</span> <span class="keyword">do</span>表达式</span><br><span class="line">现在是有一个提案,使得块级作用域变为表达式,给块级作用域前面加上<span class="keyword">do</span>,使他变为<span class="keyword">do</span>表达式</span><br><span class="line"><span class="keyword">let</span> x = <span class="keyword">do</span>&#123;</span><br><span class="line">   <span class="keyword">let</span> t = f()</span><br><span class="line">   t = t + <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="ES6变量声明的六种方法"><a href="#ES6变量声明的六种方法" class="headerlink" title="ES6变量声明的六种方法"></a>ES6变量声明的六种方法</h3><p>1.let<br>2.const<br>3.class<br>4.import<br>5.var<br>6.function</p>
+<h3 id="顶层对象的属性"><a href="#顶层对象的属性" class="headerlink" title="顶层对象的属性"></a>顶层对象的属性</h3><ol>
+<li>js中的顶层对象是     window<br>&emsp; &emsp;es6逐渐将顶层创建对象和全部变量分开了<br>&emsp; &emsp;window.a (顶层变量)<br>&emsp; &emsp;es6则除了var 和 function能创建顶层变量,其余的只能创建块级元素变量</li>
+<li>Node中的顶层对象是   global<br>&emsp; &emsp;因为顶层对象在不同的环境中不一样,所以每个环境中叫的名字也不一样.<br>浏览器里面，顶层对象是window，但 Node 和 Web Worker 没有window。 浏览器和 Web Worker 里面，self也指向顶层对象，但是Node没有self。 Node 里面，顶层对象是global，但其他环境都不支持。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">      <span class="comment">//获取顶层对象</span></span><br><span class="line">      (<span class="keyword">typeof</span> <span class="built_in">window</span> !== <span class="string">'undefined'</span> ? </span><br><span class="line">      <span class="built_in">window</span> :(<span class="keyword">typeof</span> process === <span class="string">'object'</span> &amp;&amp; </span><br><span class="line">               <span class="keyword">typeof</span> <span class="built_in">require</span> === <span class="string">'function'</span> &amp;&amp;</span><br><span class="line">               <span class="keyword">typeof</span> global === <span class="string">'object'</span>)</span><br><span class="line">               ? global : <span class="keyword">this</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">//方法二获取顶层对象</span></span><br><span class="line">      <span class="keyword">var</span> getGlobal = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(<span class="keyword">typeof</span> self !== <span class="string">'undefined'</span>)&#123;<span class="keyword">return</span> self&#125;</span><br><span class="line">      <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">window</span> !== <span class="string">'undefind'</span>)&#123;<span class="keyword">return</span> <span class="built_in">window</span>&#125;</span><br><span class="line">      <span class="keyword">if</span>(<span class="keyword">typeof</span> global !== <span class="string">'undefind'</span>)&#123;<span class="keyword">return</span> global&#125;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'unable to locate global object'</span>)</span><br><span class="line">   <span class="string">``</span><span class="string">``</span>   </span><br><span class="line"><span class="number">3.</span>现在有一个提案,是统一在一个地方防止一个global找到一个垫片库,system.global</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>//commonJs<br>require(‘system.global/shim’)()<br>//es6模块的写法<br>import shim from ‘system.global/shim’;shim()<br>//ComminJs的写法<br>var global = require(‘system.global’)()<br>//ES6模块的写法<br>import getGlobal from ‘system.global’;<br>const global = getGlobal()<br><code></code></p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
